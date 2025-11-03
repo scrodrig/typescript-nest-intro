@@ -1,10 +1,11 @@
 import axios from "axios";
+import type { PokeapiResponse } from "../interfaces/pokeapi-response.interface";
 
 export class Pokemon {
-  private readonly id: number;
-  private name: string;
-  private age?: number;
-  private isAlive?: boolean;
+  public readonly id: number;
+  public name: string;
+  public age?: number;
+  public isAlive?: boolean;
 
   get imageUrl(): string {
     return `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${this.id}.png`;
@@ -17,7 +18,7 @@ export class Pokemon {
     this.isAlive = isAlive;
   }
 
-  async getMoves(): Promise<string[]> {
+  async getMoves(): Promise<PokeapiResponse["moves"]> {
     const response = await axios.get(
       `https://pokeapi.co/api/v2/pokemon/${this.id}`
     );
