@@ -6,7 +6,8 @@ import { setupCounter } from './counter.ts'
 import { name } from './bases/01-types';
 
 import { bulbasaur } from './bases/03-classes.ts';
-import { charmander } from './bases/04-injection.ts';
+// import { charmander } from './bases/04-injection.ts';
+import { charmander } from './bases/05-decorators.ts';
 console.log("🚀 ~ charmander:", charmander)
 
 document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
